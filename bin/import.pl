@@ -3,7 +3,8 @@
 use strict;
 use warnings;
 
-use lib qw(lib);
+use FindBin;
+use lib "$FindBin::Bin/../lib";
 
 =pod
 
