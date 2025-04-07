@@ -1,0 +1,31 @@
+<div id="page">
+  <h1>Gz.IT розыск почтовых сообщений</h1>
+  <form method="post">
+    <input type="text" name="email" required="1" value="[% dyn_email | html %]">
+    <button type="submit">Search</button>
+  </form>
+
+    [% IF dyn_users.size()  %]
+      <h2>Результаты поиска</h2>
+      <h3>Найдено записей - [% dyn_count | html %]</h3>
+      [% IF dyn_count > 100 %]
+        <h4>Количество найденных строк превышает установленный лимит 100 записей</h4>
+      [% END %]
+      <table border="1">
+        <tr>
+          <th>Created</th>
+          <th>Str</th>
+        </tr>
+        [% FOREACH user IN dyn_users %]
+        <tr>
+          <td>[% user.created | html %]</td>
+          <td>[% user.str | html %]</td>
+        </tr>
+        [% END %]
+      </table>
+    [% ELSE %]
+      [% IF dyn_email %]
+        <p>Записей не найдено</p>
+      [% END %]
+    [% END %]
+</div>
