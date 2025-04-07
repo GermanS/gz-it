@@ -12,14 +12,13 @@ my $build = Module::Build->new(
         recursive_test_files    => 1,
         requires        => {
                 'Moose'        => 0,
-                'Getopt::Long' =>0,
+                'Getopt::Long' => 0,
                 'Pod::Usage'   => 0,
-                'File::Slurp'  =>0,
+                'File::Slurp'  => 0,
                 'DBI'          => 0,
                 'DateTime'     => 0,
                 'Dancer2'      => 0,
                 'Dancer2::Plugin::Database' => 0,
-
         }
 );
 $build -> create_build_script();
