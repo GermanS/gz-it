@@ -13,11 +13,6 @@ has 'id'   => ( is => 'ro', required => 1, isa => 'Str' );
 sub from_str {
         my ( $class, $str ) = @_;
 
-        # TODO: что делать с этим?
-        # Store Info message 1RwtJb-000Ab2-9u <= <> R=1RwtEg-0002zL-Mh U=mailnull P=local S=2303
-        # Здесь явно не хватает id=...
-        # С одной стороный есть флаг прибытия, но констрейнты сработают и запись не добавиться
-
         if( $str =~ /^((\d{4}-\d{2}-\d{2})\s+(\d{2}:\d{2}:\d{2}))\s+(\S+)\s+<=.*id=(\S+)/ ) {
 
                 my $created = $1;

@@ -35,15 +35,6 @@ sub from_str {
 
         return;
 }
-
-sub store {
-        my ( $self, $dbh ) = @_;
-
-        require Storage;
-
-        return Storage::save_to_table_log( $dbh, $self );
-}
-
 __PACKAGE__ -> meta() -> make_immutable();
 
 1;
