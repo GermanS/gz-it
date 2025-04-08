@@ -19,6 +19,7 @@ my $build = Module::Build->new(
                 'DateTime'     => 0,
                 'Dancer2'      => 0,
                 'Dancer2::Plugin::Database' => 0,
+                'Template' => 0,
         }
 );
 $build -> create_build_script();
