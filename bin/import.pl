@@ -119,11 +119,9 @@ sub save {
 
         dbg( $verbose, sprintf "Process '%s'", $str );
 
-        if( my $log = from_str( $str ) ) {
-                Storage::store( $dbh, $log );
+        Storage::store( $dbh, from_str( $str ) );
 
-                dbg( $verbose, " --> Done\n" );
-        }
+        dbg( $verbose, " --> Done\n" );
 
         return;
 }
